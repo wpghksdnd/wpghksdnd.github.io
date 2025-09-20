@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
 
-// Unsplash 랜덤 이미지 URL 예제
 const backgrounds = [
   "https://source.unsplash.com/1600x900/?nature,forest",
   "https://source.unsplash.com/1600x900/?city,night",
@@ -11,7 +10,7 @@ const backgrounds = [
 ];
 
 export default function Main() {
-  const [bg, setBg] = useState(backgrounds[0]);
+  const [bg, setBg] = useState("");
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * backgrounds.length);
@@ -22,12 +21,14 @@ export default function Main() {
     <section
       className="main-container"
       style={{
-        backgroundImage: `url(${bg})`
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center"
       }}
     >
       <h1 className="main-title">안녕하세요, 저는 제환웅입니다 👋</h1>
       <p className="main-phone">전화번호: 010-5110-3017</p>
-      <p className="main-desc">개발자 포트폴리오</p>
+      <p className="main-desc">개발자 포트폴리오입니다!</p>
     </section>
   );
 }

@@ -1,23 +1,20 @@
-import { useEffect, useState } from "react";
+// src/components/Intro.jsx
+import React, { useEffect, useState } from "react";
+import "../index.css";
 
 export default function Intro() {
   const letters = "jehwanung".split("");
-  const [displayed, setDisplayed] = useState([]);
-
-  useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      setDisplayed((prev) => [...prev, letters[current]]);
-      current++;
-      if (current === letters.length) clearInterval(interval);
-    }, 100); // 글자 하나씩 나타나는 속도
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="intro-container">
-      {displayed.map((char, i) => (
-        <span key={i} className="intro-letter">{char}</span>
+      {letters.map((char, i) => (
+        <span
+          key={i}
+          className="intro-letter"
+          style={{ animationDelay: `${i * 0.1}s` }}
+        >
+          {char}
+        </span>
       ))}
     </div>
   );

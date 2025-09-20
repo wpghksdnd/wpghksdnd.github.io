@@ -2,29 +2,23 @@ import { useEffect, useState } from "react";
 
 export default function Intro() {
   const letters = "jehwanung".split("");
-  const [visible, setVisible] = useState(Array(letters.length).fill(false));
+  const [displayed, setDisplayed] = useState([]);
 
   useEffect(() => {
-    letters.forEach((_, i) => {
-      setTimeout(() => {
-        setVisible(prev => {
-          const copy = [...prev];
-          copy[i] = true;
-          return copy;
-        });
-      }, i * 100);
-    });
+    let current = 0;
+    const interval = setInterval(() => {
+      setDisplayed((prev) => [...prev, letters[current]]);
+      current++;
+      if (current === letters.length) clearInterval(interval);
+    }, 100); // 글자 하나씩 나타나는 속도
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="intro-container">
-      <div className="intro-text">
-        {letters.map((char, i) => (
-          <span key={i} style={{ opacity: visible[i] ? 1 : 0, transform: visible[i] ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.3s' }}>
-            {char}
-          </span>
-        ))}
-      </div>
+      {displayed.map((char, i) => (
+        <span key={i} className="intro-letter">{char}</span>
+      ))}
     </div>
   );
 }

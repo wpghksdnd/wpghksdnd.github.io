@@ -58,3 +58,41 @@
   font-size: 1.2rem;
   margin-top: 10px;
 }
+
+.project-card {
+  display: flex;
+  align-items: flex-start; /* 이미지와 텍스트 상단 맞춤 */
+  gap: 20px; /* 이미지와 텍스트 사이 간격 */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.project-img {
+  width: 200px;   /* 이미지 크기 */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px; /* 텍스트 사이 간격 */
+}
+
+.project-title {
+  font-size: 1.8rem;  /* 제목 폰트 크기 */
+  font-weight: bold;
+  margin: 0;
+}
+
+.project-tech,
+.project-role {
+  font-size: 1.2rem; /* 기술/역할 폰트 크기 */
+  margin: 0;
+}

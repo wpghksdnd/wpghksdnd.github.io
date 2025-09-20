@@ -1,4 +1,4 @@
-// src/components/Intro.jsx
+// src/components/Intro.js
 import React, { useEffect, useState } from "react";
 import "../index.css";
 

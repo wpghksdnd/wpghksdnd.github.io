@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth; /* 브라우저 기본 스크롤도 부드럽게 */
+}
+
+/* 기존 CSS 유지 */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;

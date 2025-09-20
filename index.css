@@ -1,23 +1,37 @@
+/* 전체 페이지 기본 스타일 */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
-.main {
-  height: 100vh;
+/* 메인 섹션 */
+.main-container {
+  height: 100vh; /* 화면 꽉 채움 */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: white;
+  justify-content: center; /* 세로 가운데 정렬 */
+  align-items: center;     /* 가로 가운데 정렬 */
+  background-color: white;
+  text-align: center;
 }
 
-.main h1 {
-  font-size: 32px;
+/* 제목 */
+.main-title {
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #222;
 }
 
-.main p {
-  margin-top: 8px;
-  color: #555;
+/* 전화번호 */
+.main-phone {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* 설명 */
+.main-desc {
+  margin-top: 10px;
+  color: #777;
 }

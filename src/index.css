@@ -58,11 +58,27 @@
   font-size: 1.2rem;
   margin-top: 10px;
 }
+/* 프로젝트 섹션 전체 중앙 정렬 */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 전체 중앙 정렬 */
+  text-align: center;
+  gap: 40px; /* 제목과 카드 사이 간격 */
+}
+
+/* 카드들을 세로로 쌓고 중앙 정렬 */
+.projects-grid {
+  display: flex;
+  flex-direction: column; /* 카드 세로 정렬 */
+  align-items: center; /* 카드 중앙 정렬 */
+  gap: 50px; /* 카드 사이 간격 */
+  width: 100%;
+}
 
 .project-card {
   display: flex;
   align-items: flex-start; /* 이미지와 텍스트 상단 맞춤 */
-  gap: 20px; /* 이미지와 텍스트 사이 간격 */
   background-color: #ffffff;
   padding: 20px;
   border-radius: 15px;

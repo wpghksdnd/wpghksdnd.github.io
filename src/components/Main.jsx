@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./index.css";
+import "../index.css";
 
 // Unsplash 랜덤 이미지 URL 예제
 const backgrounds = [

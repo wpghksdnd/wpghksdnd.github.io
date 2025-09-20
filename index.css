@@ -1,37 +1,109 @@
-/* 전체 페이지 기본 스타일 */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #ffffff;
 }
 
-/* 메인 섹션 */
+/* App 전체 */
+.app-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Intro */
+.intro-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #16a34a; /* 초록색 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-container .intro-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  gap: 0.2rem;
+}
+
+/* Main */
 .main-container {
-  height: 100vh; /* 화면 꽉 채움 */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 세로 가운데 정렬 */
-  align-items: center;     /* 가로 가운데 정렬 */
+  justify-content: center;
+  align-items: center;
   background-color: white;
   text-align: center;
 }
 
-/* 제목 */
 .main-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #222;
 }
 
-/* 전화번호 */
 .main-phone {
   margin-top: 20px;
   font-size: 1.2rem;
   color: #444;
 }
 
-/* 설명 */
 .main-desc {
   margin-top: 10px;
   color: #777;
+}
+
+/* Projects */
+.projects-section {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
+  gap: 2rem;
+}
+
+.projects-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media(min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Project Card */
+.project-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #555;
+  margin-bottom: 0.25rem;
 }

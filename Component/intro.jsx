@@ -1,28 +1,30 @@
-// Intro.jsx
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Intro() {
   const letters = "jehwanung".split("");
+  const [visible, setVisible] = useState(Array(letters.length).fill(false));
+
+  useEffect(() => {
+    letters.forEach((_, i) => {
+      setTimeout(() => {
+        setVisible(prev => {
+          const copy = [...prev];
+          copy[i] = true;
+          return copy;
+        });
+      }, i * 100);
+    });
+  }, []);
 
   return (
-    <motion.div
-      initial={{ x: "100%" }}
-      animate={{ x: 0 }}
-      transition={{ duration: 1 }}
-      className="w-full h-screen bg-green-600 flex items-center justify-center"
-    >
-      <div className="text-white text-5xl font-bold flex gap-1">
+    <div className="intro-container">
+      <div className="intro-text">
         {letters.map((char, i) => (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-          >
+          <span key={i} style={{ opacity: visible[i] ? 1 : 0, transform: visible[i] ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.3s' }}>
             {char}
-          </motion.span>
+          </span>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

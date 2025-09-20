@@ -1,8 +1,7 @@
-// App.jsx
 import { useState, useEffect } from "react";
-import Intro from "./components/Intro";
-import Main from "./components/Main";
-import Projects from "./components/Projects";
+import Intro from "./components/Intro.jsx";
+import Main from "./components/Main.jsx";
+import Projects from "./components/Projects.jsx";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -13,7 +12,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-screen">
+    <div className="app-container">
       {showIntro ? <Intro /> : (
         <>
           <Main />
